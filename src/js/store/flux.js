@@ -12,9 +12,14 @@ const getState = ({ getStore, getActions, setStore }) => {
 					background: "white",
 					initial: "white"
 				}
-			]
+			],
+			todos: ["Tarea 1", "Tarea 2", "Tarea 3"]
 		},
 		actions: {
+			addTodo: (todo) => {
+				const store = getStore();
+				setStore({todos: [...store.todos, todo]});
+			},
 			// Use getActions to call a function within a fuction
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");
