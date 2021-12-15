@@ -23,7 +23,12 @@ export const Home = () => {
 
 			<ol className="mt-3">
 				{store.todos.map((value, index) => {
-					return <li key={index}>{value}</li>
+					return <li key={index}>
+						{value}
+						<button type="button" className="btn-close ms-2" aria-label="Close" onClick={()=>{
+							actions.deleteTodo(index);
+						}}></button>
+					</li>
 				})}
 			</ol>
 		</div>

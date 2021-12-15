@@ -20,6 +20,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 				const store = getStore();
 				setStore({todos: [...store.todos, todo]});
 			},
+			deleteTodo: (index) => {
+				const store = getStore();
+				setStore(store.todos.splice(index,1));
+			},
 			// Use getActions to call a function within a fuction
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");
